@@ -1,0 +1,39 @@
+<h2>Teacher Grid</h2>
+
+<div class="container col-sm-12">
+<!--Does this work like ng-click? and ng-model? the href/ui-sref?-->
+   <button ui-sref="teacher.detail" 
+   class="btn btn-primary pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Add Teacher</button>      
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Telephone</th>
+        <th>Classes</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="teacher in teacherGridCtrl.teachers">
+      <!--Is this correct? can it tie to the teacher ctrl?-->
+      <!--do i need to do this differently? (i think so) to get data from another state?-->
+
+        <td>{{teacher.name}}</td>
+        <td>{{teacher.emailAddress}}</td>
+        <td>{{teacher.telephone}}</td>
+        <td>{{teacher.classes}}</td>
+       
+        <td>
+                    <button class="btn btn-danger" ng-click="teacherGridCtrl.deleteTeacher(teacher)">
+                    <span class="glyphicon glyphicon-remove" ></span></button>
+                    <button type="button" ui-sref="teacher.detail({id:{{teacher.teacherId}}})" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span>
+                    </button>
+
+                    <!--do i need to add the ui-view, etc to this? it would seem you would want to? to save it? does this look correct?
+                    -->
+                     </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

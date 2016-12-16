@@ -1,0 +1,28 @@
+<h2>StudentGrid</h2>
+ 
+<div class="container col-sm-12">
+   <button  ui-sref="student.detail" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Add Student</button>      
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Telphone</th>
+        <th>Classes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="student in studentGridCtrl.students"">
+        <td>{{student.name}}</td>
+        <td>{{student.emailAddress}}</td>
+        <td>{{student.telephone}}</td>
+        <td>{{student.classes}}</td>
+        <td>
+                    <button class="btn btn-danger" ng-click="studentGridCtrl.deleteStudent(student)"><span class="glyphicon glyphicon-remove"></span></button>
+                    <button type="button" ui-sref="student.detail({id:{{student.studentId}}})" class="btn btn-primary" ><span class="glyphicon glyphicon-edit"></span>
+                    </button>
+                   </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,64 @@
+<h2>Teacher Details</h2>
+
+<div class="container col-sm-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Edit Teacher</div>
+        <div class="panel-body">
+            <div class="col-sm-3"><strong>First Name</strong>
+                <br/>
+                <input ng-model="teacherDetailCtrl.teacher.firstName" cols="30" rows="1" class="form-control"></input>
+                <br>
+             
+            </div>
+            <div class="col-sm-3"><strong>Last Name</strong>
+                <br/>
+                <input ng-model="teacherDetailCtrl.teacher.lastName" cols="30" rows="1" class="form-control"></input>
+                <br>
+              
+            </div>
+            <div class="col-sm-3"><strong>Email Address</strong>
+                <br/>
+                <input ng-model="teacherDetailCtrl.teacher.emailAddress" cols="30" rows="1" class="form-control"></input>
+                <br>
+               
+            </div>
+             <div class="col-sm-3"><strong>Telephone</strong>
+                <br/>
+                <input ng-model="teacherDetailCtrl.teacher.telephone" cols="30" rows="1" class="form-control"></input>
+                <br>
+               
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-primary pull-right" ng-click="teacherDetailCtrl.addTeacher(teacher)"><span class="glyphicon glyphicon-floppy-disk"></span> Save
+            </button><div class="clearfix"></div>
+        </div>
+    </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">Classes</div>
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                      
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+               
+                    <tr 
+                    ng-repeat="classObj in teacherDetailCtrl.teacher.classes" >
+                        <td>{{classObj.name}}</td>
+                        
+                        <td>{{classObj.startDate | date: 'longDate'}}</td>
+                        <td>{{classObj.endDate | date: 'longDate'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

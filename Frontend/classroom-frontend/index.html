@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="" ng-app="app">
+
+<head>
+    <title>ClassroomApp</title>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <header>
+    
+    </header>
+
+<div class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Classroom Manager</a>
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="#">Dashboard</a>
+            </li>
+            <li>
+                <a ui-sref="class.grid">Classes</a>
+            </li>
+            <li><a ui-sref="student.grid">Students</a>
+            </li>
+            <li>
+                <a ui-sref="teacher.grid">Teachers</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div ui-view></div>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/dashboard/dashboard.controller.js"></script>
+    <script src="app/class/class.grid.controller.js"></script>
+    <script src="app/class/class.detail.controller.js"></script>
+    <script src="app/student/student.grid.controller.js"></script>
+    <script src="app/student/student.detail.controller.js"></script>
+    <script src="app/teacher/teacher.grid.controller.js"></script>
+    <script src="app/teacher/teacher.detail.controller.js"></script>
+    <script src="app/core/class.factory.js"></script>
+    <script src="app/core/student.factory.js"></script>
+    <script src="app/core/teacher.factory.js"></script>
+
+    </body>
+
+    </html>
